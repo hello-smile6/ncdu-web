@@ -47,7 +47,8 @@ export function chooseDirectory(event) {
         }
       };
       sort2dArray(items).forEach(element => {
-        table.addRow(element[0],element[1]);
+        /* We do this craziness with try/catch so we don't fail if that CDN ever goes down. */
+        table.addRow(element[0],()=>{try{return filesize(element[1])}catch(e){return element[1]}});
       });
   });
 }
