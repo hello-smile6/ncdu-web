@@ -29,7 +29,7 @@ export function chooseDirectory(event) {
         /**
          * @type {File} currentFile
          */
-        if(fileHandle instanceof FileSystemFileEntry) {
+        if(fileHandle instanceof FileSystemFileHandle) {
             let currentFile=await fileHandle.getFile();
             table.addRow(currentFile.webkitRelativePath,currentFile.size);
         }
