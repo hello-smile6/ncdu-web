@@ -1,5 +1,5 @@
 /* Load our sortable table module */
-import tableSort from "https://unpkg.com/table-sort-js/table-sort.js?module";
+import "https://unpkg.com/table-sort-js/table-sort.js?module";
 export function mkTable() {
     let table=document.createElement("table");
     // Make the table sortable
