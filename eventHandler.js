@@ -30,8 +30,12 @@ export function chooseDirectory(event) {
          * @type {File} currentFile
          */
         if(fileHandle instanceof FileSystemFileHandle) {
+            console.timeLog(fileHandle);
             let currentFile=await fileHandle.getFile();
             table.addRow(currentFile.webkitRelativePath,currentFile.size);
+        }
+        else {
+            console.timeLog("Not a file",fileHandle);
         }
       }
   });
