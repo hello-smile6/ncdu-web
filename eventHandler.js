@@ -29,9 +29,9 @@ export function chooseDirectory(event) {
         /**
          * @type {File} currentFile
          */
-        if(fileHandle instanceof FileSystemFileHandle) {
+        if(fileHandle instanceof File) {
             console.timeLog(fileHandle);
-            let currentFile=await fileHandle.getFile();
+            let currentFile=fileHandle();
             table.addRow(currentFile.webkitRelativePath,currentFile.size);
         }
         else {
