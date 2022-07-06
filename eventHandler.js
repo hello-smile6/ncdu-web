@@ -1,4 +1,5 @@
 import { mkTable } from "./ui/mkTable.js";
+import { domRoot } from "./ui/init.js";
 
 export function chooseDirectory(event) {
   window.showDirectoryPicker().then(async function (directoryHandle) {
