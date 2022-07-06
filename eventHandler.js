@@ -25,6 +25,7 @@ export function chooseDirectory(event) {
           }
         }
       }
+      var items=[];
       for await (const fileHandle of getFilesRecursively(directoryHandle)) {
         /**
          * @type {File} currentFile
@@ -32,11 +33,14 @@ export function chooseDirectory(event) {
         if(fileHandle instanceof File) {
             console.log(fileHandle);
             let currentFile=fileHandle;
-            table.addRow(currentFile.name,currentFile.size);
+            // Pointless
+            // table.addRow(currentFile.name,currentFile.size);
+            items.push([currentFile.name,currentFile.size]);
         }
         else {
             console.log("Not a file",fileHandle);
         }
-      }
+      };
+      
   });
 }
