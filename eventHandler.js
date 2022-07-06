@@ -24,6 +24,11 @@ export function chooseDirectory(event) {
             yield* getFilesRecursively(handle);
           }
         }
+      };
+      var sort2dArray=function(data) {
+        // From https://www.codingem.com/javascript-sort-an-array-of-arrays/
+        const sortedData = data.sort((a, b) => b[1] - a[1]);
+        return sortedData;
       }
       var items=[];
       for await (const fileHandle of getFilesRecursively(directoryHandle)) {
@@ -41,6 +46,8 @@ export function chooseDirectory(event) {
             console.log("Not a file",fileHandle);
         }
       };
-      
+      sort2dArray(items).forEach(element => {
+        table.addRow(element[0],element[1]);
+      });
   });
 }
