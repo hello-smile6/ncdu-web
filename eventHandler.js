@@ -30,12 +30,12 @@ export function chooseDirectory(event) {
          * @type {File} currentFile
          */
         if(fileHandle instanceof File) {
-            console.timeLog(fileHandle);
+            console.log(fileHandle);
             let currentFile=fileHandle;
             table.addRow(currentFile.name,currentFile.size);
         }
         else {
-            console.timeLog("Not a file",fileHandle);
+            console.log("Not a file",fileHandle);
         }
       }
   });
