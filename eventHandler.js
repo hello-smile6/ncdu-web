@@ -31,8 +31,8 @@ export function chooseDirectory(event) {
          */
         if(fileHandle instanceof File) {
             console.timeLog(fileHandle);
-            let currentFile=fileHandle();
-            table.addRow(currentFile.webkitRelativePath,currentFile.size);
+            let currentFile=fileHandle;
+            table.addRow(currentFile.name,currentFile.size);
         }
         else {
             console.timeLog("Not a file",fileHandle);
