@@ -15,7 +15,8 @@ export function chooseDirectory(event) {
         if (entry.kind === 'file') {
           const file = await entry.getFile();
           if (file !== null) {
-            file.relativePath = getRelativePath(entry);
+            // No such method: getRelativePath
+            // file.relativePath = getRelativePath(entry);
             yield file;
           }
         } else if (entry.kind === 'directory') {
