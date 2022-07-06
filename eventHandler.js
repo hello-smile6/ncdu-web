@@ -29,8 +29,10 @@ export function chooseDirectory(event) {
         /**
          * @type {File} currentFile
          */
-        let currentFile=await fileHandle.getFile();
-        table.addRow(currentFile.webkitRelativePath,currentFile.size);
+        if(fileHandle instanceof FileSystemFileEntry) {
+            let currentFile=await fileHandle.getFile();
+            table.addRow(currentFile.webkitRelativePath,currentFile.size);
+        }
       }
   });
 }
