@@ -6,5 +6,5 @@ function init() {
     document.body.appendChild(domRoot);
     return domRoot;
 }
-var domRoot=init();
+export var domRoot=init();
 export default domRoot;
