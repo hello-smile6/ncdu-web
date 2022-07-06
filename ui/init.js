@@ -1,4 +1,4 @@
-import directoryPicker from "./directoryPickerButton";
+import directoryPicker from "./directoryPickerButton.js";
 
 export function init() {
     const domRoot=document.createElement("div");

@@ -1,4 +1,4 @@
-import { mkTable } from "./ui/mkTable";
+import { mkTable } from "./ui/mkTable.js";
 
 export function chooseDirectory(event) {
   window.showDirectoryPicker().then(async function (directoryHandle) {
